@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`id`, `a_username`, `a_password`, `last_login`) VALUES
-(1, 'admin@smartlearn.com', '63a9f0ea7bb98050796b649e85481845', '2021-02-17 12:31:11');
+(1, '<admin_username>', '<admin_password>', '2021-02-17 12:31:11');
 
 -- --------------------------------------------------------
 

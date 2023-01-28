@@ -1,0 +1,39 @@
+<script>
+    /* --- JavaScript --- */
+$('form').validate();
+
+$('#password, #passwordConfirm').on('keyup', function() {
+  if ($('#password').val() == $('#passwordConfirm').val()) {
+    $('#message').html('Matching').css('color', 'green');
+    $('#submit').prop('disabled', false);
+  } else {
+    $('#message').html('Not Matching').css('color', 'red');
+    $('#submit').prop('disabled', true);
+  }
+});
+</script>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'>
+</script>
+<script src='//cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js'>
+</script>
+<script src="//cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js">
+</script>
+<!--- HTML --->
+<form id="myform" action="process_registration.php" class="basic-grey" method="post">
+  <div>
+    <label for="password" id="passwordLabel">* Password:</label>
+    <input type="password" name="password" id="password" minlength=1 required />
+  </div>
+  <div>
+    <label for="passwordConfirm" id="passwordLabelConfirm">*
+      Password Confirmation:</label>
+    <input type="password" name="passwordConfirm" id="passwordConfirm"
+      minlength=1 required />
+    <span id="message"></span>
+  </div>
+  <div>
+    <input id="submit" type="submit" name="submit" value="Submit" />
+  </div>
+</form>
+
